@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -18,8 +20,8 @@
 				<!-- branding -->
 				<ul class="navbar">
                                 <li><a href="/home">home</a></li>
-                                <li><a href="#">login</a></li>
-                                <li><a href="#">search</a></li>
+                                <li><a href="/goToLogin">login</a></li>
+                                <li><a href="/goToSearch">search</a></li>
                                 <li><a href="#">linkedin</a></li>
                             </ul><!-- navbar -->
 				<!-- navbar -->
@@ -41,23 +43,21 @@
 		</div>
 	</section>
 	<!-- guarantee -->
+	<c:if test="${!empty(products)}">
+		<section id="products" class="section">
+				<c:forEach var="product" items="${products}">
+					<div class="productContainer">
+						<div class="productContainerItem">
 
-    		<section id="products" class="section">
+							<img id="pic1" src="${product.imagePath}">
+							<input type="text" name="product"
+							value="${product.name}"><br />
 
-    		<div class="productContainer">
-                           
-            				<div class="productContainerItem">
-            					<img id="pic1" src="#">
-            					<input type="text" name="product"
-            						value="#"><br />
-
-            				</div>
-                        
-
-            		</div>
-           
-            </section>
-
+						</div>
+					</div>
+				</c:forEach>
+        </section>
+	</c:if>
 	<section id="history" class="section">
 		<div class="container">
 			<div class="text-content">
