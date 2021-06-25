@@ -62,6 +62,6 @@ CREATE TABLE `user` (
   `activity` varchar(100) DEFAULT NULL,
   `gender` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) 
+);
 
 select * from user;
